@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Aplikasi Pusimpel</title>
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Google Fonts: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon (Tab Browser) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/iconapp.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon/iconapp.png">
+  <link rel="shortcut icon" href="icon/iconapp.png">
+
+  <!-- Pintasan Mobile / iOS (Apple Touch Icon) -->
+  <link rel="apple-touch-icon" href="icon/iconapp.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/iconapp.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Aplikasi Pusimpel">
+
+  <!-- Pintasan Desktop & Android PWA (Web App Manifest) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Aplikasi Pusimpel">
+  <meta name="theme-color" content="#172438">
+
+  <!-- Pintasan Windows / Tile -->
+  <meta name="msapplication-TileImage" content="icon/iconapp.png">
+  <meta name="msapplication-TileColor" content="#0c1422">
+</head>
+<body>
+
+  <!-- Konten Utama Dashboard -->
+  <main class="content">
+    
+    <!-- Hero Section / Header Profil Aplikasi -->
+    <header class="hero-section">
+      <div class="profile-container">
+        <img src="icon/iconapp.png" alt="Logo Pusimpel" class="profile-img" onerror="this.onerror=null; this.src='Water Utility Support Icon.png';">
+      </div>
+      
+      <h1 class="greeting-text">
+        <span class="user-name-gradient">APLIKASI PUSIMPEL</span>
+      </h1> 
+      
+      <p class="welcome-subtext">
+        Selamat datang di <strong>Dashboard Pusimpel</strong>.<br class="mobile-break"> Silakan pilih modul aplikasi di bawah ini untuk memulai.
+      </p>
+
+      <!-- Kotak Pencarian Ramping & Cepat -->
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchModul" placeholder="Cari modul aplikasi..." autocomplete="off">
+        <button id="clearSearch" class="btn-clear-search" title="Hapus pencarian">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Filter Kategori dengan Indikator Warna Seragam (Sebaris) -->
+      <div class="filter-pills" id="categoryFilter">
+        <button class="pill-btn active" data-filter="all">Semua</button>
+        <button class="pill-btn" data-filter="keuangan">
+          <span class="category-dot dot-keuangan"></span> Keuangan
+        </button>
+        <button class="pill-btn" data-filter="pelanggan">
+          <span class="category-dot dot-pelanggan"></span> Pelanggan
+        </button>
+        <button class="pill-btn" data-filter="teknik">
+          <span class="category-dot dot-teknik"></span> Teknik &amp; Meter
+        </button>
+        <button class="pill-btn" data-filter="kepegawaian">
+          <span class="category-dot dot-kepegawaian"></span> Kepegawaian
+        </button>
+        <button class="pill-btn" data-filter="manajemen">
+          <span class="category-dot dot-manajemen"></span> Manajemen
+        </button>
+        <button class="pill-btn" data-filter="khusus">
+          <span class="category-dot dot-khusus"></span> Digital &amp; Khusus
+        </button>
+      </div>
+    </header>
+
+    <hr class="divider-glass">
+
+    <!-- Section: Modul Aplikasi Aktif (Urut Abjad A-Z) -->
+    <section class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-arrow-down-a-z"></i> Modul Aplikasi:
+        </h2>
+        <span class="counter-badge" id="moduleCounter">68 Modul</span>
+      </div>
+      
+      <div class="icon-grid" id="mainIconGrid">
+
+        <!-- Absensi Honor/Kontrak (A) -->
+        <a href="https://pusimpel.com/attendance" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Absensi Honor Kontrak Attendance Kehadiran Pegawai Presensi">
+          <i class="fa-solid fa-user-clock"></i>
+          <h3>Absensi Honor/Kontrak</h3>
+        </a>
+
+        <!-- 1. Absensi Kepegawaian (A) -->
+        <a href="https://pusimpel.com/attendant" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Absensi Kepegawaian Attendant Kehadiran Pegawai Presensi">
+          <i class="fa-solid fa-user-check"></i>
+          <h3>Absensi Kepegawaian</h3>
+        </a>
+
+        <!-- 2. Absensi Lapangan (A) -->
+        <a href="https://pusimpel.com/tirtafield" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Absensi Lapangan TirtaField Mobile">
+          <i class="fa-solid fa-helmet-safety"></i>
+          <h3>Absensi Lapangan</h3>
+        </a>
+
+        <!-- 2. Administrasi (A) -->
+        <a href="https://pusimpel.com/administrasi" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="Administrasi">
+          <i class="fa-solid fa-file-signature"></i>
+          <h3>Administrasi</h3>
+        </a>
+
+        <!-- 3. Analisa Nol Kubik (A) -->
+        <a href="https://pusimpel.com/pemakaian_nolkubik" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Analisa Nol Kubik Pemakaian Meter Air">
+          <i class="fa-solid fa-droplet"></i>
+          <h3>Analisa Nol Kubik</h3>
+        </a>
+
+        <!-- 4. Anggaran & Realisasi (A) -->
+        <a href="https://pusimpel.com/anggaran_realisasi" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Anggaran Realisasi">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Anggaran &amp; Realisasi</h3>
+        </a>
+
+        <!-- 5. Berkas MONEV (B) -->
+        <a href="https://pusimpel.com/Berkas_MONEV" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="Berkas MONEV">
+          <i class="fa-solid fa-folder-closed"></i>
+          <h3>Berkas MONEV</h3>
+        </a>
+
+        <!-- 6. Calon Pelanggan (C) -->
+        <a href="https://pusimpel.com/calon_pelanggan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Calon Pelanggan">
+          <i class="fa-solid fa-user-clock"></i>
+          <h3>Calon Pelanggan</h3>
+        </a>
+
+        <!-- 7. Cicilan Tagihan (C) -->
+        <a href="https://pusimpel.com/cicil" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Cicilan Tagihan Angsuran">
+          <i class="fa-solid fa-receipt"></i>
+          <h3>Cicilan Tagihan</h3>
+        </a>
+
+        <!-- 8. Daftar Tunggu (D) -->
+        <a href="https://pusimpel.com/daftar-tunggu" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Daftar Tunggu Pasang Baru">
+          <i class="fa-solid fa-list-ol"></i>
+          <h3>Daftar Tunggu</h3>
+        </a>
+
+        <!-- 9. Dashboard Utama (D) -->
+        <a href="https://pusimpel.com/dashboard" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Simpatik">
+          <i class="fa-brands fa-buffer"></i>
+          <h3>Simpatik</h3>
+        </a>
+
+        <!-- 10. Data Pelamar (D) -->
+        <a href="https://pusimpel.com/datapelamar" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Data Pelamar Rekrutmen">
+          <i class="fa-solid fa-id-card-clip"></i>
+          <h3>Data Pelamar</h3>
+        </a>
+
+        <!-- 11. DMA (District Meter Area) (D) -->
+        <a href="https://pusimpel.com/dma" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="DMA District Meter Area">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3>DMA (District Meter Area)</h3>
+        </a>
+
+        <!-- 12. Drive Tirta Kepri (D) -->
+        <a href="https://pusimpel.com/drive-tirtakepri" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Drive Cloud Tirta Kepri">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <h3>Drive Tirta Kepri</h3>
+        </a>
+
+        <!-- 13. e-Arsip Digital System (E) -->
+        <a href="https://pusimpel.com/e-Arsip" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="e-Arsip Digital System">
+          <i class="fa-solid fa-box-archive"></i>
+          <h3>e-Arsip Digital System</h3>
+        </a>
+
+        <!-- 14. Efisiensi Penagihan (E) -->
+        <a href="https://pusimpel.com/efisiensi_penagihan" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Efisiensi Penagihan">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <h3>Efisiensi Penagihan</h3>
+        </a>
+
+        <!-- 15. Evaluasi Kondisi Meter (E) -->
+        <a href="https://pusimpel.com/usiameter" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Evaluasi Kondisi Meter Usia Tera">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <h3>Evaluasi Kondisi Meter</h3>
+        </a>
+
+        <!-- 16. Foto Meter (F) -->
+        <a href="https://pusimpel.com/Foto_Meter" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Foto Meter Air">
+          <i class="fa-solid fa-image"></i>
+          <h3>Foto Meter</h3>
+        </a>
+
+        <!-- 17. Foto Pegawai (F) -->
+        <a href="https://pusimpel.com/Foto_Pegawai" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Foto Pegawai Staf">
+          <i class="fa-solid fa-portrait"></i>
+          <h3>Foto Pegawai</h3>
+        </a>
+
+        <!-- 18. Foto Rumah (F) -->
+        <a href="https://pusimpel.com/Foto_Rumah" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Foto Rumah Pelanggan">
+          <i class="fa-solid fa-house-chimney-user"></i>
+          <h3>Foto Rumah</h3>
+        </a>
+
+        <!-- 19. Info Penghasilan (I) -->
+        <a href="https://pusimpel.com/penghasilan" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Info Penghasilan Gaji Pegawai">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+          <h3>Info Penghasilan</h3>
+        </a>
+
+        <!-- 20. Informasi Pegawai (I) -->
+        <a href="https://pusimpel.com/cari_pegawai" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Informasi Pegawai Cari Staf">
+          <i class="fa-solid fa-users-viewfinder"></i>
+          <h3>Informasi Pegawai</h3>
+        </a>
+
+        <!-- 21. Informasi Pelanggan (I) -->
+        <a href="https://pusimpel.com/cari_pelanggan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Informasi Pelanggan Cari Data">
+          <i class="fa-solid fa-address-book"></i>
+          <h3>Informasi Pelanggan</h3>
+        </a>
+
+        <!-- 22. Informasi Tagihan (I) -->
+        <a href="https://pusimpel.com/cek_tagihan" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Informasi Tagihan Cek Rekening Air">
+          <i class="fa-solid fa-wallet"></i>
+          <h3>Informasi Tagihan</h3>
+        </a>
+
+        <!-- 23. IoT Smart Water (I) -->
+        <a href="https://pusimpel.com/iot" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="IoT Smart Water Meter Sensor">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>IoT Smart Water</h3>
+        </a>
+
+        <!-- 24. Kalkulator Lembur (K) -->
+        <a href="https://server.tirtakepri.co.id/lembur/" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Kalkulator Lembur Hitung Lembur Pegawai Keuangan Tirta Kepri">
+          <i class="fa-solid fa-business-time"></i>
+          <h3>Kalkulator Lembur</h3>
+        </a>
+
+        <!-- 25. Kalkulator Rekening Air (K) -->
+        <a href="https://pusimpel.com/kalkulator" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Kalkulator Rekening Air Simulasi Tarif">
+          <i class="fa-solid fa-calculator"></i>
+          <h3>Kalkulator Rekening Air</h3>
+        </a>
+
+        <!-- 25. Karier Tirta Kepri (K) -->
+        <a href="https://pusimpel.com/karier_tirtakepri" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Karier Tirta Kepri Lowongan">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>Karier Tirta Kepri</h3>
+        </a>
+
+        <!-- 26. Kepri Meet (K) -->
+        <a href="https://pusimpel.com/kepri-meet" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Kepri Meet Video Conference Rapat">
+          <i class="fa-solid fa-video"></i>
+          <h3>Kepri Meet</h3>
+        </a>
+
+        <!-- 27. Kinerja Perusahaan (K) -->
+        <a href="https://pusimpel.com/kinerja_umum" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="Kinerja Perusahaan Kinerja Umum">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Kinerja Perusahaan</h3>
+        </a>
+
+        <!-- 28. Komparasi Penerimaan (K) -->
+        <a href="https://pusimpel.com/komparasi_penerimaan" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Komparasi Penerimaan">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <h3>Komparasi Penerimaan</h3>
+        </a>
+
+        <!-- 29. Koordinat & GIS (K) -->
+        <a href="https://pusimpel.com/kordinant" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Koordinat GIS Pemetaan Pelanggan">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Koordinat &amp; GIS</h3>
+        </a>
+
+        <!-- 30. KPI Perusahaan (K) -->
+        <a href="https://pusimpel.com/kpi" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="KPI Key Performance Indicators">
+          <i class="fa-solid fa-award"></i>
+          <h3>KPI Perusahaan</h3>
+        </a>
+
+        <!-- 31. Laporan DRD (L) -->
+        <a href="https://pusimpel.com/laporan_DRD" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Laporan DRD Daftar Rekening Ditagih">
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <h3>Laporan DRD</h3>
+        </a>
+
+        <!-- 32. Laporan LPP (L) -->
+        <a href="https://pusimpel.com/laporan_LPP" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Laporan LPP Penerimaan Penagihan">
+          <i class="fa-solid fa-file-invoice"></i>
+          <h3>Laporan LPP</h3>
+        </a>
+
+        <!-- 33. Laporan Piutang (L) -->
+        <a href="https://pusimpel.com/piutang" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Laporan Piutang Tagihan Tunggakan">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+          <h3>Laporan Piutang</h3>
+        </a>
+
+        <!-- 34. Layanan PDAM (L) -->
+        <a href="https://pusimpel.com/pdam" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Layanan Profil PDAM">
+          <i class="fa-solid fa-faucet-drip"></i>
+          <h3>Layanan PDAM</h3>
+        </a>
+
+        <!-- 35. Manajemen Stok (M) -->
+        <a href="https://pusimpel.com/stok" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="Manajemen Stok Barang Gudang Inventaris">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h3>Manajemen Stok</h3>
+        </a>
+
+        <!-- 36. Materi Pelatihan (M) -->
+        <a href="https://pusimpel.com/materi" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Materi Training Pelatihan Dokumen">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <h3>Materi Pelatihan</h3>
+        </a>
+
+        <!-- 37. MONEV SPI (M) -->
+        <a href="https://pusimpel.com/monevSPI" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="MONEV SPI Satuan Pengawas Intern">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <h3>MONEV SPI</h3>
+        </a>
+
+        <!-- 38. Monitoring Baca Meter (M) -->
+        <a href="https://pusimpel.com/progres_bacameter" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Monitoring Baca Meter Progres Lapangan">
+          <i class="fa-solid fa-gauge-high"></i>
+          <h3>Monitoring Baca Meter</h3>
+        </a>
+
+        <!-- 39. Monitoring Blokir Pelanggan (M) -->
+        <a href="https://pusimpel.com/blokir-pelanggan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Monitoring Blokir Pelanggan">
+          <i class="fa-solid fa-user-lock"></i>
+          <h3>Monitoring Blokir Pelanggan</h3>
+        </a>
+
+        <!-- 40. Monitoring Foto Rumah (M) -->
+        <a href="https://pusimpel.com/cek_fotorumah" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Monitoring Foto Rumah Cek">
+          <i class="fa-solid fa-camera-retro"></i>
+          <h3>Monitoring Foto Rumah</h3>
+        </a>
+
+        <!-- 41. Monitoring Golongan Pelanggan (M) -->
+        <a href="https://pusimpel.com/golongan_pelanggan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Monitoring Golongan Pelanggan Tarif">
+          <i class="fa-solid fa-user-tag"></i>
+          <h3>Monitoring Golongan Pelanggan</h3>
+        </a>
+
+        <!-- 42. Monitoring Pengaduan (M) -->
+        <a href="https://pusimpel.com/progres_pengaduan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Monitoring Pengaduan Progres Layanan">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Monitoring Pengaduan</h3>
+        </a>
+
+        <!-- 43. Monitoring Tugas Direktur (M) -->
+        <a href="https://pusimpel.com/tugas" class="icon-item cat-manajemen" target="_blank" data-category="manajemen" data-title="Monitoring Tugas Direktur Instruksi">
+          <i class="fa-solid fa-clipboard-user"></i>
+          <h3>Monitoring Tugas Direktur</h3>
+        </a>
+
+        <!-- 44. Non-Revenue Water (N) -->
+        <a href="https://pusimpel.com/NRW" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Non Revenue Water NRW Kehilangan Air">
+          <i class="fa-solid fa-water"></i>
+          <h3>Non-Revenue Water</h3>
+        </a>
+
+        <!-- 45. Pendaftaran Baru (P) -->
+        <a href="https://pusimpel.com/pendaftaran-tirtakepri" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Pendaftaran Sambungan Baru">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <h3>Pendaftaran Baru</h3>
+        </a>
+
+        <!-- 46. Pensiun Tirta Kepri (P) -->
+        <a href="https://pusimpel.com/pensiun-tirtakepri" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="Pensiun Pegawai Tirta Kepri">
+          <i class="fa-solid fa-user-shield"></i>
+          <h3>Pensiun Tirta Kepri</h3>
+        </a>
+
+        <!-- 47. Presentasi (P) -->
+        <a href="https://pusimpel.com/presentation" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Presentasi Slide Rapat">
+          <i class="fa-solid fa-person-chalkboard"></i>
+          <h3>Presentasi</h3>
+        </a>
+
+        <!-- 48. Pusat Bantuan (P) -->
+        <a href="https://pusimpel.com/login/contact.php" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Pusat Bantuan Contact Hubungi Kami Hotline">
+          <i class="fa-solid fa-phone-volume"></i>
+          <h3>Pusat Bantuan</h3>
+        </a>
+
+        <!-- 49. Pusat Info (P) -->
+        <a href="https://pusimpel.com/info" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Pusat Informasi Pengumuman Info">
+          <i class="fa-solid fa-circle-info"></i>
+          <h3>Pusat Info</h3>
+        </a>
+
+        <!-- 50. Qurban (Q) -->
+        <a href="https://pusimpel.com/Qurban" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Qurban Tirta Kepri Panitia">
+          <i class="fa-solid fa-handshake-angle"></i>
+          <h3>Qurban</h3>
+        </a>
+
+        <!-- 51. Qurban 1447 H (Q) -->
+        <a href="https://pusimpel.com/qurban1447H" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Qurban 1447 H Tirta Kepri">
+          <i class="fa-solid fa-kaaba"></i>
+          <h3>Qurban 1447 H</h3>
+        </a>
+
+        <!-- 52. Qurban 1448 H (Q) -->
+        <a href="https://pusimpel.com/qurban-1448h" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Qurban 1448 H Tirta Kepri">
+          <i class="fa-solid fa-mosque"></i>
+          <h3>Qurban 1448 H</h3>
+        </a>
+
+        <!-- 53. Rekategori Pelanggan (R) -->
+        <a href="https://pusimpel.com/rekategori" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Rekategori Pelanggan Tarif">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>Rekategori Pelanggan</h3>
+        </a>
+
+        <!-- 54. Rekategori RT (R) -->
+        <a href="https://pusimpel.com/rekategoriRT" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Rekategori RT Rumah Tangga">
+          <i class="fa-solid fa-house-user"></i>
+          <h3>Rekategori RT</h3>
+        </a>
+
+        <!-- 55. SIM-Kenaikan (S) -->
+        <a href="https://pusimpel.com/sim-kenaikan" class="icon-item cat-kepegawaian" target="_blank" data-category="kepegawaian" data-title="SIM Kenaikan Pangkat Gaji Berkala Pegawai Kepegawaian">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <h3>SIM-Kenaikan</h3>
+        </a>
+
+        <!-- 56. Status Pelanggan (S) -->
+        <a href="https://pusimpel.com/monitoring-drd" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Status Pelanggan Monitoring DRD">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Status Pelanggan</h3>
+        </a>
+
+        <!-- 57. Survey Kepuasan (S) -->
+        <a href="https://pusimpel.com/survey" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Survey Kepuasan Pelanggan Kuesioner">
+          <i class="fa-solid fa-square-poll-vertical"></i>
+          <h3>Survey Kepuasan</h3>
+        </a>
+
+        <!-- 58. Tarif Air (T) -->
+        <a href="https://pusimpel.com/tarif" class="icon-item cat-keuangan" target="_blank" data-category="keuangan" data-title="Struktur Tarif Rekening Air">
+          <i class="fa-solid fa-tags"></i>
+          <h3>Tarif Air</h3>
+        </a>
+
+        <!-- 59. Testing Modul (T) -->
+        <a href="https://pusimpel.com/TESTING" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Testing Modul Uji Coba">
+          <i class="fa-solid fa-vial-circle-check"></i>
+          <h3>Testing Modul</h3>
+        </a>
+
+        <!-- 60. TIRA (Tirta Asisten) (T) -->
+        <a href="https://pusimpel.com/tira" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="TIRA Tirta Asisten Bot AI">
+          <i class="fa-solid fa-robot"></i>
+          <h3>TIRA AI</h3>
+        </a>
+
+        <!-- 61. Tirta Mulia (T) -->
+        <a href="https://pusimpel.com/tirta-mulia" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Koperasi Tirta Mulia">
+          <i class="fa-solid fa-shop"></i>
+          <h3>Tirta Mulia</h3>
+        </a>
+
+        <!-- 62. Trial Modul (T) -->
+        <a href="https://pusimpel.com/trial" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Trial Sandbox Eksperimen">
+          <i class="fa-solid fa-flask"></i>
+          <h3>Trial Modul</h3>
+        </a>
+
+        <!-- 63. Undian Digital (U) -->
+        <a href="https://pusimpel.com/undian" class="icon-item cat-khusus" target="_blank" data-category="khusus" data-title="Undian Digital Hadiah Pelanggan">
+          <i class="fa-solid fa-gift"></i>
+          <h3>Undian Digital</h3>
+        </a>
+
+        <!-- 64. Update Pelanggan (U) -->
+        <a href="https://pusimpel.com/update-pelanggan" class="icon-item cat-pelanggan" target="_blank" data-category="pelanggan" data-title="Update Data Pelanggan Ubah">
+          <i class="fa-solid fa-user-pen"></i>
+          <h3>Update Pelanggan</h3>
+        </a>
+
+        <!-- 65. Water Treatment (W) -->
+        <a href="https://pusimpel.com/water" class="icon-item cat-teknik" target="_blank" data-category="teknik" data-title="Smart TMA">
+          <i class="fa-solid fa-droplet"></i>
+          <h3>Smart TMA</h3>
+        </a>
+
+      </div>
+
+      <!-- State Kosong jika pencarian tidak ditemukan -->
+      <div id="noResult" class="no-result-box" style="display: none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p>Modul yang Anda cari tidak ditemukan.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Perumda Air Minum Tirta Kepri. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

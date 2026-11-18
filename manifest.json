@@ -1,0 +1,25 @@
+{
+  "name": "Aplikasi Pusimpel",
+  "short_name": "Pusimpel",
+  "description": "Dashboard Aplikasi Pusimpel Perumda Air Minum Tirta Kepri",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c1422",
+  "theme_color": "#172438",
+  "icons": [
+    {
+      "src": "icon/iconapp.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon/iconapp.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
